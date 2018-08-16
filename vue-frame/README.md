@@ -1,6 +1,6 @@
 # web
 
-> 个人学习webpack搭建的简单的vue项目.
+> 个人学习webpack搭建的简单的vue项目
 
 ## Build Setup
 
