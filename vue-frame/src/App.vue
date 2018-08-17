@@ -6,10 +6,17 @@
 <script>
 export default {
 	name:'app',
-	data(){
+	data () {
 		return {
 			
 		}
+	},
+	mounted () {
+		let sum = (obj, ...rest) => {
+			console.log(rest)  // [2,3,4,5]
+		}
+	},
+	methods: {
 	}
 }
 </script>
