@@ -4,7 +4,7 @@ export default class Hello extends Component {
     render() {
         return (
             <div>
-                Hello,React!11ssddddasdfa
+                Hello,React
                 <img src="./static/images/timg.jpg" alt=""/>
             </div>
         )
