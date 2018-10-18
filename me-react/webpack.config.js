@@ -4,12 +4,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+        main: './src/app.js'
     },
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: './',
+        publicPath: '/',
     },
     module: {
         rules: [

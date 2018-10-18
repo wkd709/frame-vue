@@ -10,6 +10,7 @@ function assetsPath (_path) {
 
 module.exports = merge(common, {
     mode: 'production',
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: assetsPath('js/[name].[chunkhash].js'),
