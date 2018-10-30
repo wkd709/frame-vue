@@ -9,6 +9,7 @@ module.exports = merge(common,{
     devServer: {
         contentBase: path.join(__dirname, './dist'),//服务器从哪里提供内容
         publicPath: '/',
+        host: '192.168.2.153',
         port: 8000,
         // host: '192.168.2.153',//指定要使用的主机。默认情况下这是localhost
         compress: true,//启用gzip压缩

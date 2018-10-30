@@ -1,0 +1,24 @@
+.nav {
+    width: 100%;
+    height: pxToRem(60px);
+    box-shadow: 0 0 10px #be3132;
+    ul,li,a {
+        display: block;
+        line-height: pxToRem(60px);
+        height: 100%;
+    }
+    li {
+        width: 33.333333%;
+        text-align: center;
+        background:#be3132;
+        float: left;
+        a {
+        color: #fff;
+        font-size: pxToRem(16px);
+        }
+    }
+    a.active {
+        color: #be3132;
+        background: #fff;
+    }
+}

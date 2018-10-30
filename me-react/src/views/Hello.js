@@ -1,41 +1,40 @@
 import React from 'react';
 import '../style/hello.scss';
- class Toggle extends React.Component {
+import { BrowserRouter as Router, Route, Link,NavLink ,Switch,Redirect } from "react-router-dom";
+const Bus = () => <h3>Bus</h3>;
+const Cart = () => <h3>Cart</h3>;
+import NoMatch from './404';
+class Toggle extends React.Component {
     constructor(props) {
+        console.log(props);
       super(props);
       this.state = {isToggleOn: true};
   
-      // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);
     }
-  
     handleClick() {
+        console.log(this.props);
     //   this.setState(state => ({
     //     isToggleOn: !state.isToggleOn
     //   }));
-    this.props.history.push('/Home')
+        this.props.history.push('/Home')
     }
   
     render() {
       return (
-        <button onClick={this.handleClick}>
-          {/* {this.state.isToggleOn ? 'ON' : 'OFF'} */}
-          go home
-        </button>
+        <div>
+            <h1>Hello</h1>
+            {/* <img src="/static/images/timg.jpg" alt=""/>*/}
+            <ul>
+                <li><NavLink exact to='/Hello'>bus</NavLink></li>
+                <li><NavLink to='/Hello/cart'>cart</NavLink></li>
+            </ul>
+            <Route exact path='/Hello' component={Bus} />
+            <Route path='/Hello/cart' component={Cart} />
+            {/* { !this.props.match.isExact ? <Redirect to='/Hello'/> : '' } */}
+        </div>
       );
     }
-  }
-
-  
-const Hello = () => {
-    return (
-        <div>
-            Hello,React
-            <img src="/static/images/timg.jpg" alt=""/>
-            <div id='home_id'>go home</div>
-            <Toggle/>
-        </div>
-    )
 }
 
 export default Toggle;
