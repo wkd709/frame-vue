@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link,NavLink ,Switch,Redirect } from "react-router-dom";
 import './style/common/common.scss';
 
-import routes from './router/index';
-
 import Hello from './views/Hello';
 import NoMatch from './views/404';
 import Home from './views/home';

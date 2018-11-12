@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link,NavLink ,Switch,Redirect } from "react-router-dom";
 
-class Board extends React.Component {
+class home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,4 +20,4 @@ class Board extends React.Component {
     );
   }
 }
-export default Board;
+export default home;

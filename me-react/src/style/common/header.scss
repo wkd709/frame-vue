@@ -1,10 +1,10 @@
 .nav {
     width: 100%;
-    height: pxToRem(60px);
+    height: pxToRem(50px);
     box-shadow: 0 0 10px #be3132;
     ul,li,a {
         display: block;
-        line-height: pxToRem(60px);
+        line-height: pxToRem(50px);
         height: 100%;
     }
     li {
