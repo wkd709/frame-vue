@@ -1,24 +1,24 @@
-.nav {
+.header {
+    position: relative;
+    height: pxToRem(44px);
+    line-height: pxToRem(44px);
     width: 100%;
-    height: pxToRem(50px);
-    box-shadow: 0 0 10px #be3132;
-    ul,li,a {
-        display: block;
-        line-height: pxToRem(50px);
-        height: 100%;
-    }
-    li {
-        width: 33.333333%;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    font-size:  pxToRem(18px);
+    .iconfont {
+        position: absolute;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: pxToRem(44px);
+        height: pxToRem(44px);
         text-align: center;
-        background:#be3132;
-        float: left;
-        a {
         color: #fff;
-        font-size: pxToRem(16px);
-        }
+        font-size:  pxToRem(18px);
     }
-    a.active {
-        color: #be3132;
-        background: #fff;
-    }
+}
+.subNav {
+    
 }

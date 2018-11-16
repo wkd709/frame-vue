@@ -2,6 +2,9 @@ html,body,* {
   margin: 0;
   padding: 0;
 }
+* {
+  color: #333;
+}
 html,body {
   height: 100%;
   width: 100%;
@@ -16,7 +19,7 @@ html {
   word-break: break-word;
   text-rendering: optimizeLegibility;
   color: #333;
-  background-color: #f4f5f5;
+  background-color: #f7f7f7;
 }
 
 ul,li {
