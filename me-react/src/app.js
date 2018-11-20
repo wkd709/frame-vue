@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link,NavLink ,Switch,Redirect } from "react-router-dom";
+import './style/common/reset.scss';
 
 //views
 import Hello from './views/Hello';
 import NoMatch from './views/404';
 import Home from './views/home';
 import works from './views/works';
+
 ReactDOM.render(
     <Router>
         <div>

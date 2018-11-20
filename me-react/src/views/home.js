@@ -38,7 +38,7 @@ class home extends React.Component {
         <div className='nav'>
           <ul>
           <li>
-              <NavLink to='/works'>
+              <NavLink to='/works/Recommend'>
                 <img className='img' src='/static/images/home/icon_work.png'/>
                 <p>作品</p>
               </NavLink>
@@ -135,10 +135,13 @@ class home extends React.Component {
     );
   }
 
-  componentDidMount() {
+  componentDidMount() {//方法在将组件输出呈现给DOM后运行
     this.getData();
   }
-  
+  componentWillUnmount() {
+
+  }
+
   getData() {
     this.setState({'data':get_wap_homepage_info.data});
   }

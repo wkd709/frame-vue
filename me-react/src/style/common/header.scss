@@ -1,3 +1,7 @@
+@function pxToRem($px) {
+    @return ($px/12px) * 1rem;
+}
+
 .header {
     position: relative;
     height: pxToRem(44px);
@@ -18,7 +22,102 @@
         color: #fff;
         font-size:  pxToRem(18px);
     }
+    .right {
+        color: #fff;
+        float: right;
+        padding: 0 pxToRem(10px);
+        font-size: pxToRem(16px);
+    }
 }
-.subNav {
-    
+.left-show-box {
+    .layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 9995;
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        z-index: 9996;
+        width: 80%;
+        height: 100%;
+        color: #fff;
+        box-sizing: border-box;
+        -webkit-transition: -webkit-transform .3s ease-out;
+        transition: -webkit-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+        will-change: transform;
+        .content {
+            background: #303031;
+            padding: pxToRem(15px) 0;
+            padding-left: pxToRem(30px);
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .menu-img {
+            div.img {
+                width: pxToRem(60px);
+                height: pxToRem(60px);
+                border-radius: 50%;
+                vertical-align: middle;
+                display: inline-block;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .text {
+                color: #fff;
+                font-size: pxToRem(16px);
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: pxToRem(15px);
+            }
+        }
+        .menu-ul {
+            width: 100%;
+            margin: pxToRem(10px) 0;
+            a {
+                display: block;
+                color: #fff;
+                font-size: pxToRem(15px);
+                li {
+                    height: pxToRem(45px);
+                    line-height: pxToRem(45px);
+                    i {
+                        display: inline-block;
+                        width: pxToRem(19px);
+                        height: pxToRem(19px);
+                        vertical-align: text-bottom;
+                        margin-right: pxToRem(15px);
+                        background-size: pxToRem(19px) pxToRem(19px);
+                    }
+                }
+            }
+            .sy i {background-image: url('/static/images/sy.png');}
+            .zp i {background-image: url('/static/images/zp.png');}
+            .tpgc i {background-image: url('/static/images/tpgc.png');}
+            .syjq i {background-image: url('/static/images/syjq.png');}
+            .dh i {background-image: url('/static/images/dh.png');}
+            .jxjq i {background-image: url('/static/images/jxjq.png');}
+        }
+    }
 }
+
+.left-show-box .menu{
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.left-show-box .menu.open {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+}
+

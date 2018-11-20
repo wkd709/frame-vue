@@ -1,6 +1,13 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+var miniCssTextPlugin = require('mini-css-extract-plugin');
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+
+function assetsPath (_path) {
+    const assetsSubDirectory = 'static';
+    return path.posix.join(assetsSubDirectory, _path);
+}
 
 module.exports = {
     entry: {
@@ -11,6 +18,30 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
     },
+    plugins: [
+        new HtmlWebPackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'static'),
+                to: 'static',
+                ignore: ['.*']
+            }
+        ]),
+        new miniCssTextPlugin({
+            path: path.resolve(__dirname, 'dist'),
+            filename: assetsPath('css/[name].[chunkhash].css'),
+            chunkFilename: assetsPath('css/[id].[chunkhash].css')
+        }),
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: {
+              safe: true
+            },
+        }),
+    ],
     module: {
         rules: [
             {
@@ -26,23 +57,9 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                test: /\.(scss|css)$/,
+                use: [miniCssTextPlugin.loader, 'css-loader', 'sass-loader']
             },
         ]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true
-        }),
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, 'static'),
-                to: 'static',
-                ignore: ['.*']
-            }
-        ]),
-    ],
 }

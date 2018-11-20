@@ -1,4 +1,6 @@
-@import './common/common.scss';
+@function pxToRem($px) {
+    @return ($px/12px) * 1rem;
+}
 
 .banner {
     width: 100%;

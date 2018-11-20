@@ -1,1 +1,163 @@
-@import './common/common.scss';
+@function pxToRem($px) {
+    @return ($px/12px) * 1rem;
+}
+.works {
+    .subNav {
+        height: pxToRem(40px);
+        width: 100%;
+        background: #fff;
+        li {
+            width: 33.33333%;
+            height: pxToRem(40px);
+            line-height: pxToRem(40px);
+            text-align: center;
+            display: inline-block;
+            a {
+                font-size: pxToRem(14px);
+                display: inline-block;
+                height: 38px;
+            }
+        }
+        li a.active  {
+            border-bottom: 2px solid #2c72ac;
+        }
+    }
+}
+.page-layout {
+    position: relative;
+    .classify,.page {
+        -webkit-transition: -webkit-transform .3s ease-out;
+        transition: -webkit-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+        will-change: transform;
+        position: absolute;
+        top: 0;
+    }
+    .page {
+        top: pxToRem(44px);
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    .page.none {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    .classify {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        
+    }
+    .classify.yes {
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    .classify {
+        width:100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .title {
+            height: pxToRem(44px);
+            line-height: pxToRem(44px);
+            color: #fff;
+            text-align: center;
+            font-size: pxToRem(18px);
+            background: #000;
+            i {
+                position: absolute;
+                left: 0;
+                font-size: pxToRem(20px);
+                padding: 0 pxToRem(15px);
+            }
+        }
+        .list-ul {
+            background: #000;
+            li {
+                width: 100%;
+                height: pxToRem(120px);
+                text-align: center;
+                color: #fff;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                position: relative;
+                dl {
+                    display: block;
+                    font-size: pxToRem(18px);
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    -webkit-transform: translate(0,-50%);
+                    -ms-transform: translate(0,-50%);
+                    -moz-transform: translate(0,-50%);
+                    transform: translate(0,-50%);
+                    .second {font-size: pxToRem(12px);}
+                }
+            }
+        }
+    }
+}
+
+.Recommend.list,.Popularity.list,.Newest.list {
+    overflow: auto;
+    .item:nth-child(odd){
+        padding-right: 2px;
+    }
+    .item {
+        width: 50%;
+        display: block;
+        height: pxToRem(207px);
+        overflow: hidden;
+        float: left;
+        box-sizing: border-box;
+        padding-bottom: 2px;
+        div {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            &>img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            span {
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                font-size: pxToRem(13px);
+                width: 100%;
+                height: pxToRem(35px);
+                padding: pxToRem(5px) pxToRem(20px);
+                line-height: pxToRem(20px);
+                background: -webkit-gradient(linear,0 0,0 bottom,from(transparent),to(rgba(0,0,0,.5)));
+                color: #fff;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                -webkit-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                img {
+                    opacity: 1;
+                    margin-left: auto;
+                    height: auto;
+                    width: pxToRem(20px);
+                    height: pxToRem(20px);
+                    margin-top: 0px;
+                    border-radius: 50%;
+                    margin-right: pxToRem(10px);
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

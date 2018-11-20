@@ -2,9 +2,6 @@ html,body,* {
   margin: 0;
   padding: 0;
 }
-* {
-  color: #333;
-}
 html,body {
   height: 100%;
   width: 100%;
@@ -27,6 +24,7 @@ ul,li {
 }
 a {
   text-decoration: none;
+  color: #333;
 }
 
 // 大小的计算
