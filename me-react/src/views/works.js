@@ -46,30 +46,29 @@ class works extends React.Component {
                         <Route exact path='/works/Recommend' component={Recommend} />
                         <Route path='/works/Popularity' component={Popularity} />
                         <Route path='/works/Newest' component={Newest} />
+                        <Redirect from='*' to='/works/Recommend'/>
                     </Switch>
                 </div>
                 {/* 分类 */}
                 <div className={'classify '+(this.state.rightOpen ? 'yes' : '')} ref='classify'>
-                    <div>
-                        <div className='title'>
-                            <i className='iconfont icon-zuojiantou' onClick={this.openRight}></i>
-                            分类
-                        </div>
-                        <ul className='list-ul'>
-                            {
-                                this.state.classifyList.map((key,index) => (
-                                    <NavLink to='' key={index}>
-                                        <li style={{backgroundImage:"url("+key.img+")"}}>
-                                            <dl>
-                                                <dt>{key.category_name}</dt>
-                                                <dt className='second'>{key.desc}</dt>
-                                            </dl>
-                                        </li>
-                                    </NavLink>
-                                ))
-                            }
-                        </ul>
+                    <div className='title'>
+                        <i className='iconfont icon-zuojiantou' onClick={this.openRight}></i>
+                        分类
                     </div>
+                    <ul className='list-ul'>
+                        {
+                            this.state.classifyList.map((key,index) => (
+                                <NavLink to='' key={index}>
+                                    <li style={{backgroundImage:"url("+key.img+")"}}>
+                                        <dl>
+                                            <dt>{key.category_name}</dt>
+                                            <dt className='second'>{key.desc}</dt>
+                                        </dl>
+                                    </li>
+                                </NavLink>
+                            ))
+                        }
+                    </ul>
                 </div>
             </div>
         );

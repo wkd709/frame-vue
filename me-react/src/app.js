@@ -9,6 +9,10 @@ import NoMatch from './views/404';
 import Home from './views/home';
 import works from './views/works';
 
+import Recommend from './views/works/Recommend';
+import Popularity from './views/works/Popularity';
+import Newest from './views/works/Newest';
+
 ReactDOM.render(
     <Router>
         <div className='app'>
