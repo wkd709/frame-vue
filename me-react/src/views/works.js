@@ -38,9 +38,9 @@ class works extends React.Component {
                 <div className={'page '+(this.state.rightOpen ? 'none' : '')}>
                     <Header data={headerData}  onMenuClick={this.onMenuClick.bind(this)}/>
                     <div className='subNav'>
-                        <li ><NavLink exact to='/works/Recommend'>推荐</NavLink></li>
-                        <li><NavLink to='/works/Popularity'>人气</NavLink></li>
-                        <li><NavLink to='/works/Newest'>最新</NavLink></li>
+                        <NavLink exact to='/works/Recommend'><li>推荐</li></NavLink>
+                        <NavLink to='/works/Popularity'><li>人气</li></NavLink>
+                        <NavLink to='/works/Newest'><li>最新</li></NavLink>
                     </div>
                     <Switch>
                         <Route exact path='/works/Recommend' component={Recommend} />
@@ -90,7 +90,6 @@ class works extends React.Component {
         });
     }
     componentDidMount() {//方法在将组件输出呈现给DOM后运行
-        
     }
     componentWillUnmount() {
     }

@@ -16,7 +16,7 @@ class Newest extends React.Component {
                     this.state.list.map((key,index)=>(
                         <a className='item' key={index}>
                             <div>
-                                <img src="/static/images/home/15392409688261454_45939002_S240.JPG" alt=""/>
+                                <img src="/static/images/home/15392409688261454_45939002_S240.jpg" alt=""/>
                                 <span className='info'>
                                     <img src="/static/images/home/53393816_1514327089_71270.jpg" alt=""/>
                                     断魂剑魔

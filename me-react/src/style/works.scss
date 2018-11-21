@@ -6,27 +6,27 @@
         height: pxToRem(40px);
         width: 100%;
         background: #fff;
-        li {
+        a {
             width: 33.33333%;
             height: pxToRem(40px);
             line-height: pxToRem(40px);
             text-align: center;
             display: inline-block;
-            a {
+            li {
                 font-size: pxToRem(14px);
                 display: inline-block;
                 height: 38px;
             }
         }
-        li a.active  {
+        a.active li  {
             border-bottom: 2px solid #2c72ac;
+            color: #2c72ac;
         }
     }
 }
 
 .Recommend.list,.Popularity.list,.Newest.list {
     width: 100%;
-    overflow: auto;
     .item:nth-child(odd){
         padding-right: 2px;
     }
