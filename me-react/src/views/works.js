@@ -23,6 +23,7 @@ class works extends React.Component {
             rightName: '',
             classifyList: []
         };
+        this.openRight = this.openRight.bind(this);
     }
    
     render() {
@@ -34,8 +35,8 @@ class works extends React.Component {
         return (
             <div className='works page-layout'>
                 {/*  内容页 */}
-                <Header data={headerData}  onMenuClick={this.onMenuClick.bind(this)}/> 
                 <div className={'page '+(this.state.rightOpen ? 'none' : '')}>
+                    <Header data={headerData}  onMenuClick={this.onMenuClick.bind(this)}/>
                     <div className='subNav'>
                         <li ><NavLink exact to='/works/Recommend'>推荐</NavLink></li>
                         <li><NavLink to='/works/Popularity'>人气</NavLink></li>
@@ -48,47 +49,50 @@ class works extends React.Component {
                     </Switch>
                 </div>
                 {/* 分类 */}
-                <div className={'classify '+(this.state.rightOpen ? 'yes' : '')}>
-                    {
-                        this.state.rightOpen ? 
-                            <div>
-                                <div className='title'>
-                                    <i className='iconfont icon-zuojiantou' onClick={()=>(this.setState({rightOpen:false}))}></i>
-                                    分类
-                                </div>
-                                <ul className='list-ul'>
-                                    {
-                                        this.state.classifyList.map((key,index) => (
-                                            <NavLink to='' key={index}>
-                                                <li style={{backgroundImage:"url("+key.img+")"}}>
-                                                    <dl>
-                                                        <dt>{key.category_name}</dt>
-                                                        <dt className='second'>{key.desc}</dt>
-                                                    </dl>
-                                                </li>
-                                            </NavLink>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        : ''
-                    }
+                <div className={'classify '+(this.state.rightOpen ? 'yes' : '')} ref='classify'>
+                    <div>
+                        <div className='title'>
+                            <i className='iconfont icon-zuojiantou' onClick={this.openRight}></i>
+                            分类
+                        </div>
+                        <ul className='list-ul'>
+                            {
+                                this.state.classifyList.map((key,index) => (
+                                    <NavLink to='' key={index}>
+                                        <li style={{backgroundImage:"url("+key.img+")"}}>
+                                            <dl>
+                                                <dt>{key.category_name}</dt>
+                                                <dt className='second'>{key.desc}</dt>
+                                            </dl>
+                                        </li>
+                                    </NavLink>
+                                ))
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
     }
+    openRight() {
+        this.setState({rightOpen:false});
+        let self = this;
+        setTimeout(function() {
+            self.setState({classifyList:[]});
+        },400)
+    }
 
     onMenuClick(obj) {
+        this.getData();
         this.setState({
             rightOpen: obj.isShow,
             rightName: obj.name,
         });
     }
     componentDidMount() {//方法在将组件输出呈现给DOM后运行
-        this.getData();
+        
     }
     componentWillUnmount() {
-
     }
 
     getData() {

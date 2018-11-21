@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link,NavLink ,Switch,Redirect } from "react-router-dom";
-import './style/common/reset.scss';
+import './style/common/common.scss';
 
 //views
 import Hello from './views/Hello';
@@ -11,7 +11,7 @@ import works from './views/works';
 
 ReactDOM.render(
     <Router>
-        <div>
+        <div className='app'>
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/Hello' component={Hello} />

@@ -1,8 +1,11 @@
-html,body,* {
+html,
+body,
+* {
   margin: 0;
   padding: 0;
 }
-html,body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -12,14 +15,16 @@ $htmlSize: 12px;
 
 html {
   font-size: $htmlSize;
-  font-family: -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Arial,sans-serif;
+  font-family: -apple-system, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+    Helvetica Neue, Arial, sans-serif;
   word-break: break-word;
   text-rendering: optimizeLegibility;
   color: #333;
   background-color: #f7f7f7;
 }
 
-ul,li {
+ul,
+li {
   list-style: none;
 }
 a {

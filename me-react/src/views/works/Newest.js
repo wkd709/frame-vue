@@ -11,7 +11,8 @@ class Newest extends React.Component {
     render() {
         return (
             <div className='Newest list'>
-               {
+                {
+                    this.state.list && this.state.list.length > 0 ?
                     this.state.list.map((key,index)=>(
                         <a className='item' key={index}>
                             <div>
@@ -23,6 +24,12 @@ class Newest extends React.Component {
                             </div>
                         </a>
                     ))
+                    :
+                    (
+                        <div className='defalut'>
+                            数据跑丢了~~~
+                        </div>
+                    )
                 }
             </div>
         );
