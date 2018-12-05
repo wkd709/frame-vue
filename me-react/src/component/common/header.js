@@ -40,7 +40,7 @@ class Header extends Component {
                                 <a href=""><li className='jxjq'><i></i> 极限摄影</li></a>
                             </ul>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div> 
         )

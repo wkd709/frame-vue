@@ -13,17 +13,26 @@ import Recommend from './views/works/Recommend';
 import Popularity from './views/works/Popularity';
 import Newest from './views/works/Newest';
 
+
+// import { Provider } from 'react-redux'
+// import { createStore } from 'redux'
+// import todoApp from './redux/reducers'
+
+// let store = createStore(todoApp)
 ReactDOM.render(
-    <Router>
-        <div className='app'>
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/Hello' component={Hello} />
-                <Route path='/works' component={works} />
-                <Route path='/404' component={NoMatch} />
-                <Redirect from='*' to='/404'/>
-            </Switch>
-        </div>
-    </Router>,
+    // <Provider store={store}>
+        <Router>
+            <div className='app'>
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/Hello' component={Hello} />
+                    <Route path='/works' component={works} />
+                    <Route path='/404' component={NoMatch} />
+                    <Redirect from='*' to='/404'/>
+                </Switch>
+            </div>
+        </Router>
+    // </Provider>
+    ,
     document.getElementById('app')
 );

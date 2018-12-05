@@ -17,7 +17,6 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.3",
     "css-loader": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.0.7",
     "mini-css-extract-plugin": "^0.4.4",
@@ -35,8 +34,11 @@
   "dependencies": {
     "antd-mobile": "^2.2.6",
     "axios": "^0.18.0",
+    "install": "^0.12.2",
+    "npm": "^6.4.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1"
   }
