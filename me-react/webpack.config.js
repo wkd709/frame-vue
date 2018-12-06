@@ -46,8 +46,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(jsx|js)$/,
-                exclude: /node_modules/,
                 use: [{ loader: 'babel-loader' }],
+                exclude: /node_modules/,
             },
             {
                 test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,//配置静态文件解析

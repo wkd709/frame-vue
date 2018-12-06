@@ -14,13 +14,13 @@ import Popularity from './views/works/Popularity';
 import Newest from './views/works/Newest';
 
 
-// import { Provider } from 'react-redux'
-// import { createStore } from 'redux'
-// import todoApp from './redux/reducers'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './redux/reducers/index'
 
-// let store = createStore(todoApp)
+let store = createStore(todoApp)
 ReactDOM.render(
-    // <Provider store={store}>
+    <Provider store={store}>
         <Router>
             <div className='app'>
                 <Switch>
@@ -32,7 +32,7 @@ ReactDOM.render(
                 </Switch>
             </div>
         </Router>
-    // </Provider>
+    </Provider>
     ,
     document.getElementById('app')
 );
