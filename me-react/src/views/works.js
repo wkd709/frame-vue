@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from 
 import '../style/works.scss';
 
 //component
-import Header from '../component/common/header';
+import Header from '../components/common/header';
 
 //views
 import Recommend from './works/Recommend';

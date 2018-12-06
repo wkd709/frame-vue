@@ -16,9 +16,10 @@ import Newest from './views/works/Newest';
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import todoApp from './redux/reducers/index'
+import reducers from './redux/reducers/index'
 
-let store = createStore(todoApp)
+let store = createStore(reducers);
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>

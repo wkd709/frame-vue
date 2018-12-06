@@ -6,7 +6,7 @@ import '../style/home.scss';
 import * as api from '../fetch/api.js';
 
 //component
-import Header from '../component/common/header';
+import Header from '../components/common/header';
 
 
 //json 数据
