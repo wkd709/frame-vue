@@ -3,7 +3,6 @@ import '../style/hello.scss';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
 
 import Test from '../container/test';
-import test from '../container/test';
 
 class Toggle extends React.Component {
     constructor(props) {
@@ -12,11 +11,9 @@ class Toggle extends React.Component {
     handleClick() {
        
     }
-
-    
     render() {
         return (
-            <div>
+            <div className='Hello'>
                 <Test/>
             </div>
         );

@@ -1,38 +1,39 @@
 @function pxToRem($px) {
     @return ($px/12px) * 1rem;
 }
-
-ul li {
-    height: pxToRem(40px);
-    line-height: pxToRem(40px);
-    border-bottom: 1px solid #ddd;
-    font-size: pxToRem(16px);
-    padding: 0 pxToRem(20px);
-}
-ul li.active {
-    background: #ed4040;
-    border-color: #ed4040;
-    color: #fff;
-}
-ul li span {
-    display: inline-block;
-}
-.text {
-    width: 80%;
-}
-.del {
-    float: right;
-    padding: 0 pxToRem(15px);
-    font-size: pxToRem(30px);
-}
-.btn {
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    background: #205acc;
-    margin: 15px 0;
-    font-size: pxToRem(16px);
-    border-radius: pxToRem(10px);
+.Hello {
+    ul li {
+        height: pxToRem(40px);
+        line-height: pxToRem(40px);
+        border-bottom: 1px solid #ddd;
+        font-size: pxToRem(16px);
+        padding: 0 pxToRem(20px);
+    }
+    ul li.active {
+        background: #ed4040;
+        border-color: #ed4040;
+        color: #fff;
+    }
+    ul li span {
+        display: inline-block;
+    }
+    .text {
+        width: 80%;
+    }
+    .del {
+        float: right;
+        padding: 0 pxToRem(15px);
+        font-size: pxToRem(30px);
+    }
+    .btn {
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        background: #205acc;
+        margin: 15px 0;
+        font-size: pxToRem(16px);
+        border-radius: pxToRem(10px);
+    }
 }

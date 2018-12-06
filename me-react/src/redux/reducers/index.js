@@ -4,7 +4,6 @@ export default function (state = { lists: [{text:'li'}],newType:'all'}, action) 
         case types.ADD_TODO:
             return Object.assign({}, state, {...state,lists:[...state.lists,{text:action.text}]});
         case types.TOGGLE_TODO:
-            
             state.lists.map((key,index)=>{
                 if(action.index == index){
                     key.completed = true;
@@ -15,10 +14,7 @@ export default function (state = { lists: [{text:'li'}],newType:'all'}, action) 
             return Object.assign({}, state, {state});
         case types.DEL_TODO:
             state.lists.splice(action.index, 1);
-            
             return Object.assign({}, state, {state});
-        case types.SWITCH_TYPE:
-            return {...state,newType:action.newType}
         default:
             return state;
     }

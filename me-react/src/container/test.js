@@ -8,7 +8,6 @@ class Todos extends Component {
         this.state = {
             ind:0
         }
-        console.log(props);
         this.add = this.add.bind(this);
     }
     add(){

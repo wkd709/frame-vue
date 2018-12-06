@@ -9,8 +9,5 @@ export default {
     },
     toggle_todo(index){
         return {type:types.TOGGLE_TODO, index}
-    },
-    switch_type(newType){
-        return {type:types.SWITCH_TYPE, newType}
     }
 }
