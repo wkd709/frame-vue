@@ -6,7 +6,7 @@ import '../style/works.scss';
 
 //component
 import Header from '../components/common/header';
-
+import LeftMenu from '../components/common/leftMenu';
 //views
 import Recommend from './works/Recommend';
 import Popularity from './works/Popularity';
@@ -70,6 +70,7 @@ class works extends React.Component {
                         }
                     </ul>
                 </div>
+                <LeftMenu/>
             </div>
         );
     }

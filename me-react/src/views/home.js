@@ -7,7 +7,7 @@ import * as api from '../fetch/api.js';
 
 //component
 import Header from '../components/common/header';
-
+import LeftMenu from '../components/common/leftMenu';
 
 //json 数据
 import  get_wap_homepage_info from '../fetch/data/get_wap_homepage_info.json';
@@ -28,6 +28,7 @@ class home extends React.Component {
     return (
       <div>
         <Header data={headerData}/>
+        <LeftMenu/>
         <div className='banner'>
           <div className='banner-content'>
             <a href="">
