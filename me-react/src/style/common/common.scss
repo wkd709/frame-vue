@@ -98,3 +98,12 @@
   line-height: pxToRem(50px);
   color: #999;
 }
+
+.noFound {
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
