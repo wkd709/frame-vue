@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config --report webpack.prod.js"
   },
   "author": "",
   "license": "ISC",

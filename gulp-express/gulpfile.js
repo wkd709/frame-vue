@@ -19,6 +19,7 @@ var revCollector = require('gulp-rev-collector');  //- 路径替换 (替换 HTML
 var rename = require('gulp-rename');//- 文件重名
 var runSequence = require('run-sequence'); //- 执行顺序
 var babel = require("gulp-babel");
+var gutil = require('gulp-util');//用来打印日志，看具体什么地方出错了
 
 // 删除文件
 gulp.task('clean', function(cb) {
@@ -50,21 +51,24 @@ gulp.task('css', function() {
 });
 // 压缩js
 gulp.task('js', function () {
-    return gulp.src('public/js/**/*.js')
-        // es6转es5
-        .pipe(babel({
-          presets: ['es2015']
-        }))
-        .pipe(jshint())
-        .pipe(uglify({ compress: true }))
-        .pipe(gulp.dest('dist/js/'))
+  return gulp.src('public/js/**/*.js')
+    // es6转es5
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(jshint())
+    .pipe(uglify({ compress: true }))
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString());
+    })
+    .pipe(gulp.dest('dist/js/'))
 });
 
 
 // 打包插件
 gulp.task('tools', function () {
   return gulp.src('public/tools/**/*')
-      .pipe(gulp.dest('dist/tools/'));
+    .pipe(gulp.dest('dist/tools/'));
 });
 
 // 压缩img
