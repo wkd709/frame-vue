@@ -9,6 +9,9 @@ body {
   height: 100%;
   width: 100%;
 }
+@function pxToRem($px) {
+  @return ($px/12px) * 1rem;
+}
 
 // 根html的 font-size 大小
 $htmlSize: 12px;
@@ -22,6 +25,25 @@ html {
   color: #333;
   background-color: #f7f7f7;
 }
+input::-webkit-input-placeholder {
+  color: #999;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #999;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+  outline: none;
+  list-style-position: outside;
+  -webkit-tap-highlight-color: transparent;
+  font-size: pxToRem(16px);
+  box-sizing: border-box;
+  padding: 0 pxToRem(14px);
+  border-radius: pxToRem(10px);
+}
 
 ul,
 li {
@@ -32,7 +54,23 @@ a {
   color: #333;
 }
 
-// 大小的计算
-@function pxToRem($px) {
-  @return ($px/$htmlSize) * 1rem;
+.error {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  max-width: 50%;
+  height: auto;
+  color: rgb(255, 255, 255);
+  padding: pxToRem(15px);
+  border-radius: pxToRem(5px);
+  box-sizing: border-box;
+  z-index: 100001;
+  font-size:  pxToRem(16px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
 }

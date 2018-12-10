@@ -49,20 +49,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    .title {
-      height: pxToRem(44px);
-      line-height: pxToRem(44px);
-      color: #fff;
-      text-align: center;
-      font-size: pxToRem(18px);
-      background: #000;
-      i {
-        position: absolute;
-        left: 0;
-        font-size: pxToRem(20px);
-        padding: 0 pxToRem(15px);
-      }
-    }
     .list-ul {
       background: #000;
       li {

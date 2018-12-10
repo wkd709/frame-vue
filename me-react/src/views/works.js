@@ -51,7 +51,7 @@ class works extends React.Component {
                 </div>
                 {/* 分类 */}
                 <div className={'classify '+(this.state.rightOpen ? 'yes' : '')} ref='classify'>
-                    <div className='title'>
+                    <div className='header-title'>
                         <i className='iconfont icon-zuojiantou' onClick={this.openRight}></i>
                         分类
                     </div>

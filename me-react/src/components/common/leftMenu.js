@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from 
 import actions from '../../redux/actions/leftMenuAction';
 import {connect} from 'react-redux';
 
+import {storage} from '../../tools/localstorage';
+
 class LeftMenu extends Component {
     constructor(props) {
         super(props);
@@ -15,11 +17,16 @@ class LeftMenu extends Component {
                     <div className={this.props.left.open ? "layer": ""} onClick={this.onOpenChange}></div>
                     <div className={'menu '+(this.props.left.open ? "open": "")}>
                         <div className='content'>
-                            <div className='menu-img'>
+                            <div className='menu-img' onClick={this.goUser.bind(this)}>
                                 <div className='img'>
                                     <img src="/static/images/user.png" alt="Image"/>
                                 </div>
-                                <div className='text'>登录/注册</div>
+                                {
+                                    this.props.isLogin.user ? 
+                                    (<span className='name'>{this.props.isLogin.user}</span>)
+                                    :
+                                    (<NavLink className='text' to='/login'>登录/注册</NavLink>)
+                                }
                             </div>
                             <ul className='menu-ul' onClick={this.onOpenChange}>
                                 <NavLink to='/'><li className='sy'><i></i> 首页</li></NavLink>
@@ -35,7 +42,15 @@ class LeftMenu extends Component {
             </div> 
         )
     }
-
+    componentDidMount() {//方法在将组件输出呈现给DOM后运行
+        this.props.left_menu_show(false);
+    }
+    goUser() {//进入个人中心
+        if (!this.props.isLogin.user) {
+            return;
+        }
+        window.location.href='/user/index';
+    }
     onOpenChange(){
         this.props.left_menu_show(false);
     }

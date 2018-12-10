@@ -1,0 +1,66 @@
+@function pxToRem($px) {
+    @return ($px/12px) * 1rem;
+}
+
+.login,.reg {
+    .form {
+        margin: pxToRem(30px) auto;
+        width: 80%;
+        .input-flex {
+            width: 100%;
+            margin: pxToRem(15px) 0;
+            position:relative;
+            input {
+                line-height: pxToRem(44px);
+                height: pxToRem(42px);
+                border-radius: pxToRem(10px);
+                width: 100%;
+            }
+            span[class^="cc_"] {
+                line-height: pxToRem(24px);
+                height: pxToRem(24px);
+                font-size: pxToRem(16px);
+                color: #336fac;
+                position: absolute;
+                top: 50%;
+                margin-top:  pxToRem(-12px);
+            }
+            .cc_area {
+                width: pxToRem(58px);
+                left: 0;
+                text-align: center;
+                border-right: 1px solid #999;
+            }
+            .input-phone {
+                padding-left: pxToRem(70px);
+            }
+            .input-code {
+                padding-right: pxToRem(128px);
+            }
+            .cc_code {
+                right: 0;
+                padding: 0 pxToRem(15px);
+                border-left: 1px solid #999
+            }
+        }
+        .help {
+            margin-top: pxToRem(30px);
+            color: #999;
+            font-size: pxToRem(12px);
+            a {
+                color: #336fac;
+            }
+        }
+        .btn-form {
+            color: #fff;
+            background: #444;
+            width: 100%;
+            box-sizing: border-box;
+            height: pxToRem(44px);
+            line-height: pxToRem(44px);
+            border-radius: pxToRem(10px);
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+}

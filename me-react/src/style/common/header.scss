@@ -1,6 +1,31 @@
 @function pxToRem($px) {
     @return ($px/12px) * 1rem;
 }
+.header-title {
+    height: pxToRem(44px);
+    line-height: pxToRem(44px);
+    color: #fff;
+    text-align: center;
+    font-size: pxToRem(18px);
+    background: #000;
+    i {
+        position: absolute;
+        left: 0;
+        font-size: pxToRem(20px);
+        padding: 0 pxToRem(15px);
+    }
+    a {
+        float: right;
+        color: #fff;
+        font-size: pxToRem(16px);
+        padding: 0 15px;
+    }
+    .share {
+        float: right;
+        font-size: pxToRem(20px);
+        width: 50px;
+    }
+}
 
 .header {
     position: relative;
@@ -78,6 +103,10 @@
                 vertical-align: middle;
                 display: inline-block;
                 margin-left: pxToRem(15px);
+            }
+            span.name {
+                font-size: pxToRem(16px);
+                margin-left: pxToRem(16px);
             }
         }
         .menu-ul {
