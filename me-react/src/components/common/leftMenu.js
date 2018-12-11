@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
-import actions from '../../redux/actions/leftMenuAction';
 import {connect} from 'react-redux';
 
-import {storage} from '../../tools/localstorage';
+import actions from '../../redux/actions/leftMenuAction';
+import isLogin from '../../redux/actions/isLogin';
 
 class LeftMenu extends Component {
     constructor(props) {
@@ -36,6 +36,16 @@ class LeftMenu extends Component {
                                 <a href=""><li className='dh'><i></i> 对话</li></a>
                                 <a href=""><li className='jxjq'><i></i> 极限摄影</li></a>
                             </ul>
+                            {
+                                this.props.isLogin.user ? 
+                                
+                                (<div className='Logout' onClick={this.LogoutFun.bind(this)}>
+                                    <i className='iconfont icon-zhuxiao'></i>
+                                    <span>注销</span>
+                                </div>)
+                                : 
+                                ""
+                            }
                         </div>
                     </div>
                 </div>
@@ -51,12 +61,18 @@ class LeftMenu extends Component {
         }
         window.location.href='/user/index';
     }
+    LogoutFun() {//退出退出登录
+        this.props.LoginFun('');
+        window.location.href='/';
+    }
     onOpenChange(){
         this.props.left_menu_show(false);
     }
 }
-
 export default connect(
     state=>state,
-    actions
+    {
+        left_menu_show:actions.left_menu_show,
+        LoginFun: isLogin.LoginFun
+    }
 )(LeftMenu);

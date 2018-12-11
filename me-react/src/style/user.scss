@@ -1,3 +1,329 @@
 @function pxToRem($px) {
     @return ($px/12px) * 1rem;
 }
+
+.user-box {
+    height: 100%;
+    background: #fff;
+    .intr {
+        width: 100%;
+        height: pxToRem(250px);
+        background: url("/static/images/user/center-default-cover_6567b22.png") center center no-repeat;
+        position: relative;
+        .intr-txt {
+            width: 100%;
+            height: pxToRem(250px);
+            position: absolute;
+            top: 0;
+            background: rgba(#000,0.4);
+            .img {
+                width: pxToRem(72px);
+                height: pxToRem(72px);
+                border-radius: 50%;
+                background: #fff;
+                text-align: center;
+                line-height: pxToRem(72px);
+                margin: 0 auto;
+                margin-top: pxToRem(40px);
+                i {
+                    color: #dee4e7;
+                    font-size: pxToRem(40px);
+                }
+            }
+            .name {
+                font-size: pxToRem(16px);
+                margin: pxToRem(10px) 0;
+                color: #fff;
+                text-align: center;
+            }
+            .signature {
+                font-size: pxToRem(12px);
+                margin: pxToRem(15px) 0;
+                color: #DBDBDF;
+                text-align: center;
+                padding: 0 pxToRem(15px);
+                overflow: hidden;
+            }
+            .attention {
+                position: absolute;
+                bottom: pxToRem(20px);
+                width: 100%;
+                span {
+                    display: inline-block;
+                    color: #fff;
+                    height: pxToRem(16px);
+                    line-height: pxToRem(16px);
+                    padding: 0 pxToRem(12px);
+                    border-right: 1px solid #fff;
+                    font-size: pxToRem(12px);
+                }
+                span.last {
+                    border-right: 0;
+                }
+                .btn-upload {
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    bottom: pxToRem(-5px);
+                    margin-right: pxToRem(12px);
+                    border: 1px solid #DBDBDF;
+                    color: #DBDBDF;
+                    font-size: pxToRem(14px);
+                    padding: pxToRem(2px) pxToRem(8px);
+                }
+            }
+        }
+    }
+    .menu-nav {
+        width: 100%;
+        height: pxToRem(45px);
+        border-bottom: 1px solid #e6e6e6;
+        li {
+            width: 33.3333%;
+            line-height: pxToRem(45px);
+            height: pxToRem(45px);
+            text-align: center;
+            font-size: pxToRem(16px);
+            float: left;
+            position: relative;
+            i {
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: pxToRem(21px);
+                right: 0;
+                top: pxToRem(12px);
+                background: #e6e6e6;
+            }
+        }
+        li:last-child i {
+            display:none;
+        }
+        li>a {
+            width: 100%;
+            display:block;
+            line-height: pxToRem(45px);
+            height: pxToRem(45px);
+            text-align: center;
+            font-size: pxToRem(16px);
+            float: left;
+            color: #666;
+        }
+    }
+    .works {
+        overflow: hidden;
+        background: #fff;
+        .photo-box {
+            overflow: hidden;
+            .abbrev-item {
+                width: 33.333%;
+                height: pxToRem(120px);
+                float: left;;
+                padding: 2px;
+                box-sizing: border-box;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .photo-item {
+                width: 100%;
+                .img {
+                    width: 100%;
+                    height: pxToRem(250px);
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .total {
+                        display: block;
+                        position: absolute;
+                        width:  pxToRem(20px);
+                        height: pxToRem(20px);
+                        line-height: pxToRem(20px);
+                        right: pxToRem(10px);
+                        bottom: pxToRem(10px);
+                        background: rgba(0,0,0,.4);
+                        border-radius: pxToRem(10px);
+                        color: #fff;
+                        text-align: center;
+                        font-size: pxToRem(12px);
+                    }
+                }
+                .title {
+                    font-size: pxToRem(14px);
+                    font-weight: 600;
+                    margin: pxToRem(15px) pxToRem(15px) pxToRem(10px) pxToRem(15px);
+                }
+                .detail {
+                    font-size: pxToRem(14px);
+                    margin: pxToRem(10px) pxToRem(15px) pxToRem(20px) pxToRem(15px);
+                }
+                .share-bottom {
+                    margin: pxToRem(10px) pxToRem(15px) pxToRem(20px) pxToRem(15px);
+                    .vote,.browse,.comment {
+                        color: #2c72ac;
+                        font-size: pxToRem(12px);
+                        margin-right: pxToRem(15px);
+                        height: pxToRem(25px);
+                        display: inline-block;
+                        line-height: pxToRem(25px);
+                        i {
+                            color: #ccc;
+                            margin-right: pxToRem(5px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .end {
+        color: #d8dce2;
+        height: pxToRem(24px);
+        margin: pxToRem(30px) 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span.txt {
+            font-weight: 600;
+            font-size: pxToRem(18px);
+            display:inline-block;
+            margin: 0 pxToRem(10px);
+            letter-spacing: pxToRem(4px);
+        }
+        span.line {
+            width: pxToRem(20px);
+            height: 1px;
+            background: #d8dce2;
+            display:inline-block;
+        }
+    }
+    .shareBox.show {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .shareBox {
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        background: #fff;
+        padding: pxToRem(20px) 0;
+        -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        box-shadow: 1px 0 10px #eee;
+        -webkit-transition: -webkit-transform .3s ease-out;
+        transition: -webkit-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+        will-change: transform;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+        .title {
+            height: pxToRem(10px);
+            color: #666;
+            line-height: pxToRem(10px);
+            margin-bottom: pxToRem(15px);
+            padding: 0 pxToRem(15px);
+            font-size: pxToRem(16px);
+        }
+        .imagebox_share {
+            >div {
+                float: left;
+                width: 33.33%;
+
+                .img {
+                    width: pxToRem(60px);
+                    height: pxToRem(60px);
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: pxToRem(60px);
+                    margin: 0 auto;
+                    i {
+                        color: #fff;
+                        font-size: pxToRem(30px);
+                    }
+                }
+                p {
+                    text-align: center;
+                    line-height: pxToRem(30px);
+                    font-size: pxToRem(14px);
+                    color: #666;
+                }
+            }
+            .weibo .img {
+                background: #fe6258;
+            }
+            .qzone .img {
+                background: #ffbb18;
+            }
+        }
+    }
+    .intr-honor {
+        padding: pxToRem(15px) pxToRem(72px) pxToRem(15px) pxToRem(10px);
+        overflow: hidden;
+        background: #fff;
+        .img {
+            width: pxToRem(60px);
+            height: pxToRem(60px);
+            border-radius: 50%;
+            background: #f2f6f8;
+            text-align: center;
+            line-height: pxToRem(60px);
+            float: left;
+            i {
+                font-size: pxToRem(30px);
+                color: #dee4e7;
+            }
+        }
+        .content {
+            margin-left: pxToRem(70px);
+            .sore {
+                margin: pxToRem(5px) 0;
+                span {
+                    display: inline-block;
+                    font-size: pxToRem(12px);
+                    color: #aaaaaa;
+                }
+                .first {
+                    margin-right: pxToRem(15px);
+                }
+            }
+        }
+    }
+}
+.user-Honor {
+    background: #f5f5f5;
+    .medal-title {
+        background: #f5f5f5;
+        color: #666;
+        padding: pxToRem(20px) 0 pxToRem(10px) pxToRem(10px);
+        font-size: pxToRem(12px);
+    }
+    .medal-box {
+        background: #fff;
+        padding: pxToRem(15px);
+        overflow: hidden;
+        .item-medal {
+            line-height: pxToRem(32px);
+            float: left;
+            padding: pxToRem(10px) pxToRem(30px) pxToRem(10px) 0;
+            img {
+                width: pxToRem(32px);
+                height: pxToRem(32px);
+                vertical-align: middle;
+                margin-right: pxToRem(5px);
+            }
+            span {
+                vertical-align: middle;
+                color: #999;
+                font-size: pxToRem(12px);
+            }
+        }
+    }
+}

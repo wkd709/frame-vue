@@ -42,6 +42,7 @@ class Login extends React.Component {
     }
 
     formYes() {
+        var self = this;
         // 手机号判断
         var reg=/^1[345678]\d{9}$/;
         if(!reg.test(this.state.user)){
@@ -59,7 +60,7 @@ class Login extends React.Component {
         }
 
         this.props.LoginFun(this.state.user);
-        this.props.history.push('/');
+        window.location.href='/user/index';
     }
 }
 export default connect(
