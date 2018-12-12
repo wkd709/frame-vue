@@ -1,4 +1,4 @@
-@import './reset.scss';
+@import "./reset.scss";
 #app,
 .app {
   width: 100%;
@@ -93,3 +93,85 @@
     height: 100%;
   }
 }
+
+// 城市选择组件 start
+.picker-city.picker-show {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.picker-city {
+  position: fixed;
+  bottom: 0;
+  padding: pxToRem(12px);
+  padding-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 0 pxToRem(12px) #ddd;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  will-change: transform;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  .toolbar {
+    height: pxToRem(40px);
+    line-height: pxToRem(40px);
+    border-bottom: 1px solid #ddd;
+    span {
+      font-size: pxToRem(16px);
+      color: #007aff;
+      padding: 0 pxToRem(20px);
+    }
+    .cancel {
+      float: left;
+    }
+    .yes {
+      float: right;
+    }
+  }
+  .picker-modal {
+    height: pxToRem(170px);
+    overflow: hidden;
+    padding: pxToRem(10px) 0;
+    padding-top: pxToRem(8px);
+    position: relative;
+    div[class^="picker-list"] {
+      float: left;
+      width: 33.333%;
+      .packer-item {
+        font-size: pxToRem(16px);
+        text-align: center;
+        line-height: pxToRem(30px);
+        height: 30px;
+        color: #999;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: -webkit-transform 0.3s ease-out;
+        transition: -webkit-transform 0.3s ease-out;
+        transition: transform 0.3s ease-out;
+        transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+        will-change: transform;
+      }
+      .packer-item.selected {
+        color: #333;
+      }
+    }
+    .active-line {
+      width: 100%;
+      line-height: pxToRem(30px);
+      height: pxToRem(30px);
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      position: absolute;
+      margin-top: pxToRem(60px);
+      box-sizing: border-box;
+    }
+  }
+}
+// 城市选择组件 end

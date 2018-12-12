@@ -42,7 +42,9 @@ class userIndex extends React.Component {
                 </div>
                 <div className='intr'>
                     <div className="intr-txt">
-                        <div className="img"><i className="iconfont icon-user"></i></div>
+                        <NavLink to='/user/Personal'>
+                            <div className="img"><i className="iconfont icon-user"></i></div>
+                        </NavLink>
                         <p className='name'>17605887095</p>
                         <p className='signature'>还没有留下个性签名</p>
                         <div className="attention">
