@@ -39,3 +39,18 @@ export function cityName (id) {
     }
     return name;
 }
+
+/**
+ * 获取城市 下标 （索性）
+ *
+ */
+export function cityIndex (list,id) {
+    var ind = 0;
+    list.forEach(function(key,index) {
+        if (key.id==id) {
+            ind = index;
+            return;
+        }
+    });
+    return ind;
+}

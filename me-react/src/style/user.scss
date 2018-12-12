@@ -343,8 +343,14 @@
       line-height: pxToRem(44px);
       font-size: pxToRem(15px);
       border-bottom: 1px solid #ddd;
+     
       span {
         float: right;
+        max-width: pxToRem(240px);
+        height: pxToRem(44px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
       span.iconfont {
         width: pxToRem(35px);

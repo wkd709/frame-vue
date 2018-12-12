@@ -25,7 +25,7 @@ class cityChange extends Component {
     }
     render() {
         return (
-            <div className={'picker-city '+(this.props.openCity ? 'picker-show':'')}>
+            <div className={'picker-city '+(this.props.obj.openCity ? 'picker-show':'')}>
                 <div className="toolbar">
                     <span className='cancel' onClick={this.cancelFun.bind(this)}>取消</span>
                     <span className='yes' onClick={this.yesFun.bind(this)}>确定</span>
@@ -70,13 +70,28 @@ class cityChange extends Component {
         this.getData();
     }
     getData() {//初始化数据
-        this.state.provinceList = tools.cityList(0);
-        this.state.cityList = tools.cityList(tools.cityList(0)[0].id);
-        this.state.areaList = tools.cityList(this.state.cityList[0].id);
+        var cityIdObj = this.props.obj.cityId;
+        if (cityIdObj.provinceId != 0) {//有城市数据时
+
+            this.state.provinceList = tools.cityList(0);
+            this.state.cityList = tools.cityList(cityIdObj.provinceId);
+            this.state.areaList = tools.cityList(cityIdObj.cityId);
+
+            this.state.cityFormData = this.props.obj;
+
+            this.actionFun('left',tools.cityIndex(tools.cityList(0),cityIdObj.provinceId),cityIdObj.provinceId);
+            this.actionFun('center',tools.cityIndex(tools.cityList(cityIdObj.provinceId),cityIdObj.cityId),cityIdObj.cityId);
+            this.actionFun('right',tools.cityIndex(tools.cityList(cityIdObj.cityId),cityIdObj.areaId),cityIdObj.areaId);
+        } else {//无城市数据时
+
+            this.state.provinceList = tools.cityList(0);
+            this.state.cityList = tools.cityList(tools.cityList(0)[0].id);
+            this.state.areaList = tools.cityList(this.state.cityList[0].id);
+        }
         this.setState({
             'provinceList': this.state.provinceList,
             'cityList': this.state.cityList,
-            'areaList': this.state.areaList
+            'areaList': this.state.areaList,
         });
     }
 
@@ -88,12 +103,11 @@ class cityChange extends Component {
             cityId:this.state.cityList[self.state.centerIndex].id,
             areaId:this.state.areaList[self.state.rightIndex].id
         });
-        this.state.cityName = tools.cityName(this.state.cityFormData.provinceId) 
+        this.state.cityName = tools.cityName(this.state.cityFormData.provinceId)
                         + ' ' + tools.cityName(this.state.cityFormData.cityId)
                         + ' ' + tools.cityName(this.state.cityFormData.areaId);
 
         this.setState({cityFormData: this.state.cityFormData,cityName:this.state.cityName});
-
         // 像父组件传递数据
         var obj = {
             open: false,
@@ -111,17 +125,8 @@ class cityChange extends Component {
         this.props.getCity(obj);
     }
 
-    actionFun(type,index,id) {
-        if (this.state[type+'Index'] > index) {
-            this.state[type+'Y'] = this.state[type+'Y'] + Math.abs(this.state[type+'Index'] - index)*30;
-        } else {
-            this.state[type+'Y'] = this.state[type+'Y'] - Math.abs(this.state[type+'Index'] - index)*30;
-        }
-        this.setState({
-            [type+'Index']:index,
-            [type+'Y']:this.state[type+'Y']
-        });
-
+    actionFun(type,index,id) {//选择城市
+        
         if(type=='left') {
             this.state.cityList = tools.cityList(id);
             this.state.areaList = tools.cityList(this.state.cityList[0].id);
@@ -142,6 +147,16 @@ class cityChange extends Component {
                 'rightIndex':0
             });
         }
+
+        if (this.state[type+'Index'] > index) {
+            this.state[type+'Y'] = this.state[type+'Y'] + Math.abs(this.state[type+'Index'] - index)*30;
+        } else {
+            this.state[type+'Y'] = this.state[type+'Y'] - Math.abs(this.state[type+'Index'] - index)*30;
+        }
+        this.setState({
+            [type+'Index']:index,
+            [type+'Y']:this.state[type+'Y']
+        });
     }
 }
 export default cityChange;

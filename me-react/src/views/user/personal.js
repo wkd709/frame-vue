@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style/user.scss';
 import '../../tools/hammer.min.js';
-
+import * as tools from '../../tools/public.js';
 
 import CityChange from '../../components/common/cityChange';
 
@@ -11,10 +11,10 @@ class Personal extends React.Component {
         this.state = {
             isMore: false,
             openCity: false,
-            formData:  {
-                provinceId: 0,
-                cityId: 0,
-                areaId:0,
+            formData: {
+                provinceId: 439,
+                cityId: 467,
+                areaId: 471,
             },
             cityName: '',
         }
@@ -85,14 +85,21 @@ class Personal extends React.Component {
                         :''
                     }
                 </div>
-                <CityChange getCity={this.getCity.bind(this)} openCity={this.state.openCity}/>
+                <CityChange getCity={this.getCity.bind(this)} obj={{openCity:this.state.openCity,cityId:this.state.formData}}/>
             </div>
         );
     }
     componentDidMount() {
+        if (this.state.formData.provinceId!=0) {
+
+            this.state.cityName = tools.cityName(this.state.formData.provinceId)
+                        + ' ' + tools.cityName(this.state.formData.cityId)
+                        + ' ' + tools.cityName(this.state.formData.areaId);
+        }
+        this.setState({'cityName':this.state.cityName});
     }
 
-    getCity(val) {
+    getCity(val) {//接收数据
         this.state.openCity = val.open;
         this.state.formData.provinceId = val.id.provinceId;
         this.state.formData.cityId = val.id.cityId;
@@ -103,9 +110,8 @@ class Personal extends React.Component {
             formData: this.state.formData,
             cityName: this.state.cityName
         });
+        console.log(this.state);
     }
-    
-
 }
 
 export default Personal;
