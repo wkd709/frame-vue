@@ -20,10 +20,13 @@
                 line-height: pxToRem(24px);
                 height: pxToRem(24px);
                 font-size: pxToRem(16px);
-                color: #336fac;
                 position: absolute;
+                color: #999;
                 top: 50%;
                 margin-top:  pxToRem(-12px);
+            }
+            span.blue {
+                color: #336fac;
             }
             .cc_area {
                 width: pxToRem(58px);
@@ -35,7 +38,7 @@
                 padding-left: pxToRem(70px);
             }
             .input-code {
-                padding-right: pxToRem(128px);
+                padding-right: pxToRem(150px);
             }
             .cc_code {
                 right: 0;

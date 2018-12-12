@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../style/user.scss';
-import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Share from '../../components/common/share';
 

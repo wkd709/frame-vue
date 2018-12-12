@@ -19,7 +19,7 @@ class LeftMenu extends Component {
                         <div className='content'>
                             <div className='menu-img' onClick={this.goUser.bind(this)}>
                                 <div className='img'>
-                                    <img src="/static/images/user.png" alt="Image"/>
+                                    <img src="/static/images/user.png"/>
                                 </div>
                                 {
                                     this.props.isLogin.user ? 
