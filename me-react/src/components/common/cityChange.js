@@ -1,6 +1,17 @@
 import React, {Component} from 'react';
 import * as tools from '../../tools/public.js';
 
+// 引用例子
+//this.state = {
+//  openCity: false,
+//  formData = {
+//    provinceId: 0,
+//    cityId: 0,
+//    areaId:0,
+//  }
+// }
+// <CityChange getCity={this.getCity.bind(this)} obj={{openCity:this.state.openCity,cityId:this.state.formData}}/>
+
 class cityChange extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +31,7 @@ class cityChange extends Component {
                 areaId:0,
             },
             cityName: '',
-        }
+        };
         this.actionFun = this.actionFun.bind(this);
     }
     render() {
@@ -113,7 +124,7 @@ class cityChange extends Component {
             open: false,
             id: this.state.cityFormData,
             cityName: this.state.cityName,
-        }
+        };
         this.props.getCity(obj);
     }
     cancelFun() {//取消
@@ -121,7 +132,7 @@ class cityChange extends Component {
             open: false,
             id: this.state.cityFormData,
             cityName: this.state.cityName
-        }
+        };
         this.props.getCity(obj);
     }
 
