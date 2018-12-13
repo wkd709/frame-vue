@@ -88,11 +88,23 @@ class cityChange extends Component {
             this.state.cityList = tools.cityList(cityIdObj.provinceId);
             this.state.areaList = tools.cityList(cityIdObj.cityId);
 
-            this.state.cityFormData = this.props.obj;
+            this.state.cityFormData = this.props.obj.cityId;
 
-            this.actionFun('left',tools.cityIndex(tools.cityList(0),cityIdObj.provinceId),cityIdObj.provinceId);
-            this.actionFun('center',tools.cityIndex(tools.cityList(cityIdObj.provinceId),cityIdObj.cityId),cityIdObj.cityId);
-            this.actionFun('right',tools.cityIndex(tools.cityList(cityIdObj.cityId),cityIdObj.areaId),cityIdObj.areaId);
+            this.actionFun(
+                'left',
+                tools.cityIndex(tools.cityList(0),cityIdObj.provinceId),
+                cityIdObj.provinceId
+            );
+            this.actionFun(
+                'center',
+                tools.cityIndex(tools.cityList(cityIdObj.provinceId),cityIdObj.cityId),
+                cityIdObj.cityId
+            );
+            this.actionFun(
+                'right',
+                tools.cityIndex(tools.cityList(cityIdObj.cityId),cityIdObj.areaId),
+                cityIdObj.areaId
+            );
         } else {//无城市数据时
 
             this.state.provinceList = tools.cityList(0);
@@ -114,24 +126,47 @@ class cityChange extends Component {
             cityId:this.state.cityList[self.state.centerIndex].id,
             areaId:this.state.areaList[self.state.rightIndex].id
         });
-        this.state.cityName = tools.cityName(this.state.cityFormData.provinceId)
-                        + ' ' + tools.cityName(this.state.cityFormData.cityId)
-                        + ' ' + tools.cityName(this.state.cityFormData.areaId);
 
-        this.setState({cityFormData: this.state.cityFormData,cityName:this.state.cityName});
+        this.cityData('yes');
+    }
+
+    cancelFun() {//取消
+        this.cityData('cancel');
+    }
+
+    cityData(type) {//type 'yes' 确定按钮 / 'cancel' 取消按钮
+        this.state.cityName = tools.cityName(this.state.cityFormData.provinceId)
+            + ' ' + tools.cityName(this.state.cityFormData.cityId)
+            + ' ' + tools.cityName(this.state.cityFormData.areaId);
+
+        if (type == 'yes') {
+
+            this.setState({cityFormData: this.state.cityFormData,cityName:this.state.cityName});
+
+        } else if (type == 'cancel') {
+
+            this.actionFun(
+                'left',
+                tools.cityIndex(this.state.provinceList,this.state.cityFormData.provinceId),
+                this.state.cityFormData.provinceId
+            );
+            this.actionFun(
+                'center',
+                tools.cityIndex(this.state.cityList,this.state.cityFormData.cityId),
+                this.state.cityFormData.cityId
+            );
+            this.actionFun(
+                'right',
+                tools.cityIndex(this.state.areaList,this.state.cityFormData.areaId),
+                this.state.cityFormData.areaId
+            );
+        }
+
         // 像父组件传递数据
         var obj = {
             open: false,
             id: this.state.cityFormData,
             cityName: this.state.cityName,
-        };
-        this.props.getCity(obj);
-    }
-    cancelFun() {//取消
-        var obj = {
-            open: false,
-            id: this.state.cityFormData,
-            cityName: this.state.cityName
         };
         this.props.getCity(obj);
     }
