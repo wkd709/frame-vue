@@ -54,3 +54,53 @@ export function cityIndex (list,id) {
     });
     return ind;
 }
+
+/**
+ * 获取 val最近5天
+ *
+ */
+
+export function getDate(obj) {
+    var dateObj = {
+        yearList: [],
+        monthList: [],
+        dateList: []
+        
+    };
+
+    var list = obj.split('-');
+    var index = 0;
+    for (var i = -2 ; i <= 2; i++) {
+        var stamp = new Date(obj);
+
+        // 年
+        dateObj.yearList[index] = list[0]*1+i;
+
+        // 月
+        dateObj.monthList[index] = list[1]*1+i;
+        if (((list[1]*1+i)+'').length < 2) {
+
+            dateObj.monthList[index] = '0'+ (list[1]*1+i);
+
+        }
+        if ((list[1]*1+i) > 12 || (list[1]*1+i) < 1) {
+
+            dateObj.monthList[index] = '';
+        }
+
+        // 日
+        stamp.setDate(stamp.getDate() + i);
+        dateObj.dateList[index] = stamp.getDate();
+
+        if ((stamp.getDate()+'').length < 2) {
+            dateObj.dateList[index] =  '0' + stamp.getDate();
+        }
+        if (stamp.getDate() != (list[2]*1+i)) {
+            dateObj.dateList[index] = '';
+        }
+
+        index++;
+    }
+
+    return dateObj;
+}

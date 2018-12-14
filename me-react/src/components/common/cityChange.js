@@ -42,7 +42,7 @@ class cityChange extends Component {
                     <span className='yes' onClick={this.yesFun.bind(this)}>确定</span>
                 </div>
                 <div className='picker-modal'>
-                <div className='active-line'></div>
+                    <div className='active-line'></div>
                     <div className='picker-list-left'>
                         {
                             this.state.provinceList.map((item,index)=>(

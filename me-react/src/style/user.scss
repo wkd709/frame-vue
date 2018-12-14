@@ -332,6 +332,12 @@
 }
 .user-box.user-personal {
   background: #f7f7f7;
+  .header-title span {
+    position: absolute;
+    right: 0;
+    padding: 0 pxToRem(15px);
+    font-size: pxToRem(16px);
+  }
   .list-per {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -381,6 +387,84 @@
     }
     .item-per:last-child {
       border-bottom: none;
+    }
+  }
+}
+.pop-up-layer {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#000,0.4);
+  .layer-content {
+    width: 80%;
+    padding: pxToRem(20px) pxToRem(20px);
+    border-radius: pxToRem(5px);
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    .sex-box {
+      .sex-item {
+        font-size: pxToRem(18px);
+        line-height: pxToRem(35px);
+        padding-left: pxToRem(15px);
+        display: inline-block;
+        padding-right: pxToRem(15px);
+        span {
+          margin-right: pxToRem(10px);
+          vertical-align: middle;
+          color: #666;
+          font-size: pxToRem(22px);
+        }
+      }
+      .sex-item.active,
+      .sex-item.active span {
+        color: #205acc;
+      }
+    }
+    .nickname-box,
+    .email-box,
+    .phone-box,
+    .QQ-box {
+      .form-input {
+        input {
+          line-height: pxToRem(40px);
+          height: pxToRem(40px);
+          border-radius: pxToRem(5px);
+          width: 100%;
+          background: #eee;
+          border: none;
+        }
+      }
+    }
+    h2 {
+      line-height: 30px;
+      margin-bottom: pxToRem(15px);
+    }
+    .btn-btn {
+      text-align: right;
+      span {
+        display: inline-block;
+        padding: 0 pxToRem(15px);
+        height: pxToRem(30px);
+        line-height: pxToRem(30px);
+        font-size: pxToRem(14px);
+        border-radius: pxToRem(5px);
+        margin:pxToRem(15px)0 0 pxToRem(15px);
+        background: #205acc;
+        color: #fff;
+      }
+      .close {
+        background: #999;
+      }
     }
   }
 }

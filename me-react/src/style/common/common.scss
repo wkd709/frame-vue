@@ -94,13 +94,15 @@
   }
 }
 
-// 城市选择组件 start
-.picker-city.picker-show {
+// 城市选择组件 / 年月日组件 start
+.picker-city.picker-show,
+.picker-date.picker-show {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
-.picker-city {
+.picker-city,
+.picker-date {
   position: fixed;
   bottom: 0;
   padding: pxToRem(12px);
@@ -152,11 +154,6 @@
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        -webkit-transition: -webkit-transform 0.3s ease-out;
-        transition: -webkit-transform 0.3s ease-out;
-        transition: transform 0.3s ease-out;
-        transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-        will-change: transform;
       }
       .packer-item.selected {
         color: #333;
@@ -174,4 +171,25 @@
     }
   }
 }
-// 城市选择组件 end
+.picker-city .packer-item {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  will-change: transform;
+}
+.picker-date {
+  .date-title {
+    width: 100%;
+    height: pxToRem(35px);
+    span {
+      display: inline-block;
+      width: 33.333%;
+      height: pxToRem(35px);
+      line-height: pxToRem(35px);
+      text-align: center;
+      font-size: pxToRem(18px);
+    }
+  }
+}
+// 城市选择组件 / 年月日组件 end
