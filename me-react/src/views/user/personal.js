@@ -253,6 +253,7 @@ class Personal extends React.Component {
             </div>
         );
     }
+
     componentDidMount() {
 
         //初始化城市
@@ -271,9 +272,11 @@ class Personal extends React.Component {
     saveFun() {//保存修改
 
     }
+
     layerCloseFun () {//关闭弹窗
         this.setState({isLayer:''});
     }
+    
     layerYesFun () {//保存数据
         //sex 性别 / nickname 昵称 / phone 手机号 / email 邮箱  / QQ / signature 个性签名
         var self = this;
@@ -312,6 +315,7 @@ class Personal extends React.Component {
 
         this.setState({'formData':this.state.formData,isLayer:''});
     }
+    
     getDate(val) {//年月日
         this.state.openDate = false;
         this.state.formData.date = val;
