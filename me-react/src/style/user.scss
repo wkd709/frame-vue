@@ -433,7 +433,8 @@
     .nickname-box,
     .email-box,
     .phone-box,
-    .QQ-box {
+    .QQ-box,
+    .signature-box {
       .form-input {
         input {
           line-height: pxToRem(40px);
@@ -442,6 +443,15 @@
           width: 100%;
           background: #eee;
           border: none;
+        }
+        textarea {
+          width: 100%;
+          height: pxToRem(60px);
+          border-radius: pxToRem(5px);
+          background: #eee;
+          border: none;
+          padding: pxToRem(10px) pxToRem(15px);
+          box-sizing: border-box; 
         }
       }
     }

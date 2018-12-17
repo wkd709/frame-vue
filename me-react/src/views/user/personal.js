@@ -221,8 +221,25 @@ class Personal extends React.Component {
                                                 </div>
                                             </div>
                                         )
-                                        :
-                                        ''
+                                    :
+                                    this.state.isLayer == 'signature' ?
+                                        (
+                                            <div className='signature-box'>
+                                                <h2>个性签名</h2>
+                                                <div className='form-input'>
+                                                    <textarea type="text" placeholder='个性签名'
+                                                    defaultValue={this.state.formData.signature}
+                                                    onChange={
+                                                        (e)=>this.setState({
+                                                            editObj: Object.assign({},this.state.editObj,{'signature': e.target.value})
+                                                        })
+                                                    }
+                                                    />
+                                                </div>
+                                            </div>
+                                        )
+                                    : ''
+                                    
                                 }
                                 <div className='btn-btn'>
                                     <span className='close' onClick={this.layerCloseFun.bind(this)}>取消</span>
@@ -285,6 +302,12 @@ class Personal extends React.Component {
                     return false;
                 }
                 this.state.formData.QQ = this.state.editObj.QQ;break;
+            case 'signature' :
+                if(!self.state.editObj.signature){
+                    self.props.promptFun('请输入个性签名');
+                    return false;
+                }
+                this.state.formData.signature = this.state.editObj.signature;break;
         }
 
         this.setState({'formData':this.state.formData,isLayer:''});
