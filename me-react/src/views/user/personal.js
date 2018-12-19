@@ -28,7 +28,7 @@ class Personal extends React.Component {
                 phone: '',
                 email: '',
                 QQ: '',
-                signature: ''
+                signature: '',
             },
             editObj: {
                 sex: 0,
@@ -40,6 +40,7 @@ class Personal extends React.Component {
             },
             cityName: '',
         }
+        console.log(this);
     }
     render() {
         return (
@@ -55,12 +56,35 @@ class Personal extends React.Component {
                 </div>
                 <div className='list-per'>
                     <div className='item-per'>
-                    头像
-                    <span className='iconfont icon-iconfontjiantou2'></span>
-                    <span className='img'><i className='iconfont icon-user'></i></span>
+                        头像
+                        <span className='iconfont icon-iconfontjiantou2'></span>
+                        <span className='img'><i className='iconfont icon-user'></i></span>
                     </div>
                     <div className='item-per'>
                         封面图
+                        <span className='iconfont icon-iconfontjiantou2'></span>
+                    </div>
+                </div>
+                <div className='list-per'>
+                    <div className='item-per' 
+                        onClick={()=>this.props.history.push({
+                            pathname:'/user/settings',
+                            state: { 
+                                header: 'account'
+                            }
+                        })}>
+                        账号
+                        <span className='iconfont icon-iconfontjiantou2'></span>
+                        <span>17605887095</span>
+                    </div>
+                    <div className='item-per' 
+                        onClick={()=>this.props.history.push({
+                            pathname:'/user/settings',
+                            state: { 
+                                header: 'password'
+                            }
+                        })}>
+                        修改密码
                         <span className='iconfont icon-iconfontjiantou2'></span>
                     </div>
                 </div>
@@ -255,7 +279,6 @@ class Personal extends React.Component {
     }
 
     componentDidMount() {
-
         //初始化城市
         if (this.state.formData.provinceId!=0) {
 

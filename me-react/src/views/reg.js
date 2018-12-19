@@ -44,7 +44,7 @@ class Reg extends React.Component {
                         <span className={'cc_code '+(this.state.isSend ? 'blue' : '')} onClick={this.sendCode.bind(this)}>{this.state.codeText}</span>
                     </div>
                     <div className='input-flex'>
-                        <input type="password" placeholder='请输入密码(6-32位非空字符)' name="password" className='password'
+                        <input type="password" placeholder='请输入密码(密码长度最小4位)' name="password" className='password'
                             onChange={e => this.setState({formData:Object.assign({},this.state.formData,{ psd: e.target.value})})}/>
                     </div>
                     <div className='btn-form' onClick={this.register.bind(this)}>注册</div>

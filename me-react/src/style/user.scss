@@ -478,3 +478,80 @@
     }
   }
 }
+
+.account-box-cg,.password-box-cg {
+  padding: pxToRem(40px) pxToRem(20px);
+  .form-input {
+    position: relative;
+    width: 100%;
+    margin: pxToRem(15px) 0;
+    input {
+      line-height: pxToRem(40px);
+      height: pxToRem(40px);
+      border-radius: pxToRem(5px);
+      width: 100%;
+      background: #eee;
+      border: none;
+    }
+    span[class^="cc_"] {
+      line-height: pxToRem(24px);
+      height: pxToRem(24px);
+      font-size: pxToRem(16px);
+      position: absolute;
+      color: #999;
+      top: 50%;
+      margin-top:  pxToRem(-12px);
+    }
+    span.blue {
+      color: #336fac;
+    }
+    .cc_area {
+      width: pxToRem(58px);
+      left: 0;
+      text-align: center;
+      border-right: 1px solid #999;
+    }
+    .input-phone {
+      padding-left: pxToRem(70px);
+    }
+    .input-code {
+      padding-right: pxToRem(150px);
+    }
+    .cc_code {
+      right: 0;
+      padding: 0 pxToRem(15px);
+      border-left: 1px solid #999
+    }
+    textarea {
+      width: 100%;
+      height: pxToRem(60px);
+      border-radius: pxToRem(5px);
+      background: #eee;
+      border: none;
+      padding: pxToRem(10px) pxToRem(15px);
+      box-sizing: border-box; 
+    }
+    span.eye {
+      width: pxToRem(40px);
+      height: pxToRem(40px);
+      line-height: pxToRem(40px);
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: pxToRem(10px);
+      font-size: pxToRem(20px);
+      color: #999;
+    }
+  }
+  .btn {
+    width: 100%;
+    color: #fff;
+    height: pxToRem(40px);
+    line-height: pxToRem(40px);
+    text-align: center;
+    border-radius: pxToRem(5px);
+    background: #2c72ac;
+    margin-top: pxToRem(30px);
+    font-size: pxToRem(18px);
+  }
+}

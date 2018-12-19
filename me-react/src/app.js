@@ -13,6 +13,8 @@ import Reg from './views/reg';
 import userIndex from './views/user/index';
 import honor from './views/user/honor';
 import Personal from './views/user/Personal';
+import Settings from './views/user/settings';
+
 
 import Recommend from './views/works/Recommend';
 import Popularity from './views/works/Popularity';
@@ -38,6 +40,7 @@ ReactDOM.render(
                     {user ? (<Route path='/user/index' component={userIndex}/>):''}
                     {user ? (<Route path='/user/honor' component={honor} />):''}
                     {user ? (<Route path='/user/Personal' component={Personal} />):''}
+                    {user ? (<Route path='/user/settings' component={Settings} />):''}
                     <Route path='/404' component={NoMatch} />
                     <Redirect from='*' to='/404'/>
                 </Switch>
