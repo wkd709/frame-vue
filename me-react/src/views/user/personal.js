@@ -273,7 +273,7 @@ class Personal extends React.Component {
 
     }
 
-    layerCloseFun () {//关闭弹窗
+    layerCloseFun() {//关闭弹窗
         this.setState({isLayer:''});
     }
     
