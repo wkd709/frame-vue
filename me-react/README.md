@@ -1,6 +1,7 @@
-# web
+# react
 
-> 个人学习webpack搭建的简单的vue项目
+> 个人学习webpack搭建的简单的react项目
+> 包括react + sass + react-router + redux
 
 ## Build Setup
 
@@ -9,11 +10,9 @@
 npm install
 
 # serve
-npm run dev
+npm start
 
 # build for production with minification
 npm run build
 
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
