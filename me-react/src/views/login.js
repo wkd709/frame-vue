@@ -49,12 +49,11 @@ class Login extends React.Component {
             this.props.promptFun('请输入正确的手机号');
             return false;
         }
-
         if(!this.state.psd){
             this.props.promptFun('请输入密码');
             return false;
         }
-        if(this.state.psd.length<4){
+        if(this.state.psd.length < 4){
             this.props.promptFun('密码长度最小4位');
             return false;
         }

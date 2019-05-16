@@ -142,7 +142,6 @@ class home extends React.Component {
   componentWillUnmount() {
 
   }
-
   getData() {
     this.setState({'data':get_wap_homepage_info.data});
   }

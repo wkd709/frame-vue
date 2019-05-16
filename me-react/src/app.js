@@ -15,11 +15,9 @@ import honor from './views/user/honor';
 import Personal from './views/user/Personal';
 import Settings from './views/user/settings';
 
-
 import Recommend from './views/works/Recommend';
 import Popularity from './views/works/Popularity';
 import Newest from './views/works/Newest';
-
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
