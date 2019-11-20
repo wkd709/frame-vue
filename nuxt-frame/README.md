@@ -20,7 +20,7 @@ $ npm run generate
 
 ```
 
-## 安装 @nuxtjs/router 自定义路由，根目录下添加router.js文件, 自定义路由， .vue 文件就不能放在pages文件目录下，不然会被当场nuxt默认渲染成路由，可以新建个 views 文件夹 放在下面。
+#### 安装 @nuxtjs/router 自定义路由，根目录下添加router.js文件, 自定义路由， .vue 文件就不能放在pages文件目录下，不然会被当场nuxt默认渲染成路由，可以新建个 views 文件夹 放在下面。
 
 ```js
 export default {
@@ -31,7 +31,7 @@ export default {
 ```
 
 
-## 安装 @nuxtjs/style-resources 当您需要在页面中注入一些变量和mixin而不必每次都导入它们时，用此插件
+#### 安装 @nuxtjs/style-resources 当您需要在页面中注入一些变量和mixin而不必每次都导入它们时，用此插件
 
 修改 **nuxt.config.js**:
 ```js
