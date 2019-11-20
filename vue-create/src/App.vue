@@ -18,6 +18,12 @@ export default {
       name: 1,
     }
   },
+  beforeCreate() {
+    console.log(this.data,'beforeCreate');
+  },
+  created() {
+    console.log(this.data,'created');
+  },
   mounted () {
   },
   methods:{
